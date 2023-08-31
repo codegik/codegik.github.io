@@ -191,7 +191,7 @@ That is it for today. I hope this POC give some insights to you, like creating a
 
 This is my contribution, stay close to see the next posts.
 
-Thanks!
+Cheers!
 
 
 
