@@ -202,9 +202,6 @@ Cheers!
 
 
 
-
-
-
 [The death of Linux Containers]: https://inacioklassmann.medium.com/building-unikernel-with-nanos-spring-boot-app-and-deploy-on-aws-cloud-d89b8b86380f
 [Homebrew]: https://brew.sh/
 [replaced]: https://developer.apple.com/documentation/bundleresources/entitlements/com_apple_security_hypervisor
