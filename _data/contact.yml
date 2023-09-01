@@ -7,12 +7,12 @@
   icon: "fab fa-linkedin"
 
 - type: linkedin
-  icon: 'fab fa-linkedin'   # icons powered by <https://fontawesome.com/>
-  url:  'https://www.linkedin.com/in/inacioklassmann'                  # Fill with your Linkedin homepage
+  icon: 'fab fa-linkedin'
+  url:  'https://www.linkedin.com/in/inacioklassmann'
 
 - type: medium
   icon: 'fab fa-medium'
-  url:  'https://inacioklassmann.medium.com/'                  # Fill with your stackoverflow homepage
+  url:  'https://inacioklassmann.medium.com/'
 
 - type: rss
   icon: "fas fa-rss"
