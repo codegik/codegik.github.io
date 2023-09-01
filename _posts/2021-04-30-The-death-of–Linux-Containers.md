@@ -23,14 +23,14 @@ They are compiled with the required modules to run the application, so the resul
 
 To better understand about these concepts, let’s observe the figure below.
 
-![monolith-kernel.png]({{site.url}}/assets/img/monolith-kernel.png){:style="display:block; margin-left:auto; margin-right:auto"}
+![monolith-kernel.png](/assets/img/monolith-kernel.png){:style="display:block; margin-left:auto; margin-right:auto"}
 
 This picture represents a monolith kernel running on a conventional operational system. The application runs on the userspace, and then a lot of functions are called to the kernel space. There is an abstraction on these calls. Besides that, the kernel space is prepared to handle many concurrency applications.
 
 Let’s observe the unikernel application below.
 
 
-![unikernel-sctructure.png]({{site.url}}/assets/img/unikernel-sctructure.png){:style="display:block; margin-left:auto; margin-right:auto"}
+![unikernel-sctructure.png](/assets/img/unikernel-sctructure.png){:style="display:block; margin-left:auto; margin-right:auto"}
 
 This structure doesn’t segregate the user space from kernel space. It is just one thing. It doesn’t need the abstractions to call functions, and the unikernel doesn’t need to handle concurrency applications. It is beautifully built for a single application wholly isolated and secured.
 
@@ -46,7 +46,7 @@ Machine virtualization is the key of this article, and the most common implement
 
 Said that let’s see the difference between the two solutions.
 
-![unikernel-sctructure.png]({{site.url}}/assets/img/linux-containers-vs-uniternels.png){:style="display:block; margin-left:auto; margin-right:auto"}
+![unikernel-sctructure.png](/assets/img/linux-containers-vs-uniternels.png){:style="display:block; margin-left:auto; margin-right:auto"}
 
 The most impressive difference here is the layer reduction and the abstraction. It is very clear the Linux containers have much more load resources as opposed to unikernels. Therefore, the unikernels are providing the application from a reduced VM, increasing the isolation and security. On the other hand, the Linux containers share the same kernel, which means they share the same vulnerabilities.
 

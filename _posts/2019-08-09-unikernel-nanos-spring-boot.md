@@ -75,7 +75,7 @@ make run
 ```
 
 The output will be something like this:
-![compiling]({{site.url}}/assets/img/qmu-compile.png){: width="800" }
+![compiling](/assets/img/qmu-compile.png){: width="800" }
 
 
 As you can see, the build was successful and the Nanos was loaded, the listen port is 8080, it is possible to access through telnet for testing. Than press `control+c` to stop running.
@@ -143,7 +143,7 @@ ops image create -t aws -c config.json -i spring-boot-hello --package java_1.8.0
 
 The command will upload the image to the cloud automatically. This will take a time to finish the setup. We can see the output here:
 
-![ops image create]({{site.url}}/assets/img/ops-image-create.png){: width="800" }
+![ops image create](/assets/img/ops-image-create.png){: width="800" }
 
 Than we could check the image with the next command:
 
@@ -152,7 +152,7 @@ ops image list -t aws -z us-east-1
 ```
 
 
-![ops image list]({{site.url}}/assets/img/ops-image-list.png){: width="800" }
+![ops image list](/assets/img/ops-image-list.png){: width="800" }
 
 Now we are prepared to create the instance on aws cloud.
 
@@ -160,7 +160,7 @@ Now we are prepared to create the instance on aws cloud.
 ops instance create spring-boot-hello -t aws -z us-east-1
 ```
 
-![ops instance create]({{site.url}}/assets/img/ops-instance-create.png){: width="800" }
+![ops instance create](/assets/img/ops-instance-create.png){: width="800" }
 
 Than we could check the running instance on aws with the following commands:
 
@@ -169,9 +169,9 @@ aws ec2 describe-instances --filters "Name=instance-type,Values=t2.micro" --quer
 ops instance list -t aws -z us-east-1
 ```
 
-![ops instance list]({{site.url}}/assets/img/ops-instance-list.png)
+![ops instance list](/assets/img/ops-instance-list.png)
 
-![ops instance list 2]({{site.url}}/assets/img/ops-instance-list2.png){: width="800" }
+![ops instance list 2](/assets/img/ops-instance-list2.png){: width="800" }
 
 To delete the instances from aws and locally, we could run the commands:
 
