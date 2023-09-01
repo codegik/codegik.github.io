@@ -22,6 +22,8 @@ title: Inácio Klassmann # the main title
 
 tagline: Personal Blog # it will display as the sub-title
 
+sourcecode: https://github.com/codegik/codegik.github.io
+
 description: >- # used by seo meta and the atom feed
   Inácio Klassmann, blog, articles, tutorials, it, technology, software architect, software engineering, best practices
 
