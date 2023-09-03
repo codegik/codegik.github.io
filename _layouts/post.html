@@ -72,6 +72,7 @@ tail_includes:
 
 </div> <!-- .post-meta -->
 
+
 <div class="post-content">
   {{ content }}
 </div>
@@ -102,21 +103,14 @@ tail_includes:
   </div>
   {% endif %}
 
+
   <div class="post-tail-bottom
     d-flex justify-content-between align-items-center mt-3 pt-5 pb-2">
     <div class="license-wrapper">
-
-      {% if site.data.locales[lang].copyright.license.template %}
-
-        {% capture _replacement %}
-        <a href="{{ site.data.locales[lang].copyright.license.link }}">
-          {{ site.data.locales[lang].copyright.license.name }}
-        </a>
-        {% endcapture %}
-
-        {{ site.data.locales[lang].copyright.license.template | replace: ':LICENSE_NAME', _replacement }}
-
-      {% endif %}
+      <!-- LikeBtn.com BEGIN -->
+      <span class="likebtn-wrapper" data-rich_snippet="true" data-dislike_enabled="false"></span>
+      <script>(function(d,e,s){if(d.getElementById("likebtn_wjs"))return;a=d.createElement(e);m=d.getElementsByTagName(e)[0];a.async=1;a.id="likebtn_wjs";a.src=s;m.parentNode.insertBefore(a, m)})(document,"script","//w.likebtn.com/js/w/widget.js");</script>
+      <!-- LikeBtn.com END -->
     </div>
 
     {% include post-sharing.html lang=lang %}
