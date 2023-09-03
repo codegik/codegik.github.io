@@ -8,7 +8,7 @@ pin: true
 math: true
 mermaid: true
 image:
-path: /assets/img/technical-leader-vs-effective-leader.png
+  path: /assets/img/technical-leader-vs-effective-leader.png
 ---
 
 Nowadays, we can observe many people trying to be technical leaders. Many companies provide this path to recognize their employees in technical terms and maintain a shared sense of building an IT career.
