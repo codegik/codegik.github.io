@@ -1378,7 +1378,7 @@ $btn-mb: 0.5rem;
       width: auto;
       &:last-child {
         &::before {
-          content: '-';
+          content: '';
           margin: 0 0.75rem;
           opacity: 0.8;
         }
