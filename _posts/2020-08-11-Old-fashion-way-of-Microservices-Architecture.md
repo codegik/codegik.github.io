@@ -200,7 +200,9 @@ public class SwaggerResourceConfig implements SwaggerResourcesProvider {
     
     public SwaggerResourceConfig(RoutesEndpoint routesEndpoint) {
         this.routesEndpoint = routesEndpoint;
-    }@Override
+    }
+    
+    @Override
     public List<SwaggerResource> get() {
         final List<SwaggerResource> resources = new ArrayList<SwaggerResource>();routesEndpoint.invoke().forEach((key, value) -> {
             if (value.startsWith("zuul")) {
@@ -211,7 +213,9 @@ public class SwaggerResourceConfig implements SwaggerResourcesProvider {
         });
         
         return resources;
-    }private SwaggerResource swaggerResource(String name, String location, String version) {
+    }
+    
+    private SwaggerResource swaggerResource(String name, String location, String version) {
         SwaggerResource swaggerResource = new SwaggerResource();
         swaggerResource.setName(name);
         swaggerResource.setLocation(location);
