@@ -55,7 +55,3 @@ Unlearning things is not easy; most people don't know how to deal with that. The
 
 You can do anything; you just need to start doing.
 
-
-[effective learning]: https://consul.io/docs/agent/http/kv.html
-[Config Server and Client]: https://github.com/spring-cloud/spring-cloud-config
-[Spring Cloud Project]: https://projects.spring.io/spring-cloud/

@@ -95,4 +95,4 @@ I hope you don't buy this house because I believe it will break someday. That is
 
 [effective learning]: /posts/Effective-Learning
 [VUCA world]: https://www.vuca-world.org/
-[Spring Cloud Project]: https://projects.spring.io/spring-cloud/
+
