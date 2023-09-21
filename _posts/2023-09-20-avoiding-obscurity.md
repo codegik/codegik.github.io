@@ -1,5 +1,5 @@
 ---
-title: Avoiding Obscurity
+title: Avoiding Code Obscurity
 author: Inácio Klassmann
 date: 2023-09-20 20:55:00
 categories: [software design, code obscurity]
@@ -8,7 +8,7 @@ pin: true
 math: true
 mermaid: true
 image:
-  path: /assets/img/ops-nanos.png
+  path: /assets/img/avoiding-obscurity.png
 ---
 
 In software development, "obscurity" typically refers to the practice of making code, algorithms, or system design difficult to understand or decipher. This can be done for various reasons, but most of them is due bad practice in software development, generally this is discouraged by community.
@@ -124,8 +124,8 @@ class Sum {
     addValue(7);
     displayMessage();
     
-    System.out.println("Total sum: " + example.totalSum);
-    System.out.println("Message: " + example.message);
+    System.out.println("Total sum: " + totalSum);
+    System.out.println("Message: " + message);
   }
 
   public static void main(String[] args) {
@@ -234,7 +234,106 @@ void calculate() {
 
 In this improved example, variables have more descriptive names, and related operations are consolidated in one line, making the code easier to understand.
 
-![ops instance list](/assets/img/ops-instance-list.png)
+## Complex Control Flow Example
+
+### Bad practice
+
+Here's an example with many branches demonstrating complex control flow.
+
+```java
+void calculate() {
+  int[] numbers = {1, 5, 8, 2, 10, 4};
+  int sum = 0;
+
+  for (int i = 0; i < numbers.length; i++) {
+      if (numbers[i] % 2 == 0) {
+          if (numbers[i] < 5) {
+              sum += numbers[i] * 2;
+          } else if (numbers[i] >= 5 && numbers[i] < 10) {
+              sum += numbers[i] * 3;
+          } else {
+              sum += numbers[i] * 4;
+          }
+      } else {
+          if (numbers[i] < 5) {
+              sum -= numbers[i];
+          } else if (numbers[i] >= 5 && numbers[i] < 10) {
+              sum -= numbers[i] / 2;
+          } else {
+              sum -= numbers[i] / 3;
+          }
+      }
+  }
+
+  System.out.println("The calculated sum is: " + sum);
+}
+
+```
+
+Its king hard to understand at the first look, isn't?
+
+The control flow within the loop involves multiple nested if-else conditions, each with multiple branches.
+
+Depending on the value and parity of each number, different actions are taken, making the logic complex and harder to follow.
+
+Complex control flow with many branches can lead to code that is difficult to understand, especially as the number of conditions and actions increases. It's important to simplify such control flow, if possible, for improved readability and maintainability.
 
 
+### Good practice
 
+Let's refactor the previous complex control flow example to improve its readability and maintainability using the best practices.
+
+```java
+void calculate() {
+  int[] numbers = {1, 5, 8, 2, 10, 4};
+  int sum = 0;
+
+  for (int num : numbers) {
+    sum += calculateSumForNumber(num);
+  }
+
+  System.out.println("The calculated sum is: " + sum);
+}
+
+int calculateSumForNumber(int num) {
+  if (num % 2 == 0) {
+    if (num < 5) {
+        return num * 2;
+    } else if (num < 10) {
+        return num * 3;
+    }
+    return num * 4;
+  } else {
+    if (num < 5) {
+        return -num;
+    } else if (num < 10) {
+        return -num / 2;
+    }
+    return -num / 3;
+  }
+}
+```
+
+We've extracted the complex logic for calculating the sum of each number into a separate method `calculateSumForNumber`. The method `calculateSumForNumber` calculates the sum for a given number based on its properties (even/odd and value).
+
+By breaking down the logic into methods, we've made the code more modular and easier to understand.
+
+Meaningful method names and descriptive comments can further aid in understanding the purpose of each method.
+
+This refactoring improves the readability and maintainability of the code by encapsulating the complex control flow within a separate function. We tried to reduce branches as much as we could, but looks like we still have many branches. Indeed, this happens because this example is complex by nature. There are other ways to solve that, but this is a conversation for another article.
+
+
+## Keep in mind
+To avoid complex control flow and enhance code clarity, it's important to follow best practices that promote simplicity, modularity, and readability. Here are some guidelines to achieve cleaner and more maintainable code:
+
+- Use Meaningful Variable and Method Names.
+- Break Down Complex Logic into functions based on cohesion.
+- Reduce nesting and use early returns:
+- Utilize switch statements for multiple branches.
+- Use guard clauses for special cases.
+- Comment complex logic.
+- Apply design patterns.
+- Write unit tests.
+- Regular code reviews and refactorings.
+
+By adhering to these best practices, you can significantly reduce complex control flow, enhance code maintainability, and improve the readability of your codebase.
