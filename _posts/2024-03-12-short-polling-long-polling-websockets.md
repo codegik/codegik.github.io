@@ -14,7 +14,7 @@ image:
 
 It's all about notification. 
 Basically this polling technic is a server/client solution where in one side there is the client requesting information to the other side in background mode. 
-The user cannot see what's is happening behind the scenes, but in their perspective looks like something that pop up in the screen without manual intervention.
+The user cannot see what is happening behind the scenes, but in their perspective looks like something that pop up in the screen without manual intervention.
 
 We call this behavior as async notification mechanism. 
 This is made by the client side that is polling server side all the times.
@@ -91,3 +91,56 @@ Gateways often have different ideas of how long a typical connection is allowed 
 It's also a client/server solution.
 But it's bidirectional, it's similar to traditional communication using sockets. 
 After connection is opened, either client or server can send messages.
+There is no time waiting for response, you just send a message.
+The connections are persistent, the server can handle thousands of connections.
+Either client or server can close the connection.
+
+In case you need to go deep, I write a POC to simulate distributed system and websockets. ([k8s-websockets])
+
+### Downsides
+- Don't support audio and video data.
+- Don't reconnect automatically in cases of failures.
+- Proxy servers could block connections, sometimes is necessary to setup the proxy to allow open sockets.
+- Websockets are stateful, which makes them hard to use in large-scale systems that consist of multiple WebSocket servers. 
+
+### Benefits
+- Lower latency compared to HTTP, protocol uses persistent connections rather than a continuous HTTP request/response cycle
+- Event-driven technology, it's similar to pub/sub solutions. The server can broadcast data as soon as it becomes available, without any need for polling.
+- Real time application, either client or server can send messages at same time with very low latency.
+
+
+## Websockets in distributed systems
+
+As we know, Websockets use persistent connections, which means there are many opened connections directly from the client to the server.
+
+Let's imagine our server side application has two instances running. 
+When client access the Web page, the balancer will forward that connection to instance 1.
+From now one, every message between client and server is going to use instance 1.
+
+![websockets-distributed-system](/assets/img/websockets-distributed-01.png)
+
+But suddenly, for any reason, the instance 1 goes down. 
+What happens with existing connections?
+
+Well, they will be closed. Either client or server are not able to send or receive messages anymore. 
+The Websocket protocol will not reconnect automatically.
+
+![websockets-distributed-system](/assets/img/websockets-distributed-02.png)
+
+To avoid reload Web Page in order to get new connection, the client could catch the exception when connection is closed, and try to reconnect.
+This is a custom implementation in client side. Retrying to connect will make the balancer forward to available instances, in this case to instance 2.
+
+
+![websockets-distributed-system](/assets/img/websockets-distributed-03.png)
+
+## When to use Websockets?
+
+- Live chat
+- Broadcast event data
+- Multi collaboration apps
+- Notifications and alerts
+- Urban mobility
+- Delivery apps
+
+
+[k8s-websockets]: https://github.com/codegik/pocs/tree/master/k8s-websocket
