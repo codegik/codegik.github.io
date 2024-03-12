@@ -1,8 +1,8 @@
 ---
-title: Short polling, Long polling and Wesockets
+title: Short polling, Long polling and Websockets
 author: Inácio Klassmann
 date: 2024-03-12 10:55:00
-categories: [event notification, software design]
+categories: [event-driven, notification, software design]
 tags: [software design, good practice, shor polling, long polling, websockets]
 pin: true
 math: true
