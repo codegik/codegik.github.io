@@ -1,14 +1,14 @@
 ---
 title: Short polling, Long polling and Wesockets
 author: Inácio Klassmann
-date: 2024-03-12 20:55:00
+date: 2024-03-12 10:55:00
 categories: [event notification, software design]
 tags: [software design, good practice, shor polling, long polling, websockets]
 pin: true
 math: true
 mermaid: true
 image:
-  path: /assets/img/avoiding-obscurity.png
+  path: /assets/img/async-notification.png
 ---
 
 
@@ -32,7 +32,7 @@ Let's understand how it works each one.
 
 ## Short polling
 
-![short-polling](../assets/img/short-polling.png)
+![short-polling](/assets/img/short-polling.png)
 
 Client/server solution where client is requesting information to the server in intervals.
 E.g.
@@ -57,7 +57,7 @@ The solution is on client side, it consists in create infinite a loop, requestin
 
 ## Long pooling
 
-![long-polling](../assets/img/long-polling.png)
+![long-polling](/assets/img/long-polling.png)
 
 It's also a client/server solution. 
 But instead of doing many requests to the server, the client is doing one single request.
@@ -86,7 +86,7 @@ Gateways often have different ideas of how long a typical connection is allowed 
 
 ## Websockets
 
-![websockets](../assets/img/websockets.png)
+![websockets](/assets/img/websockets.png)
 
 It's also a client/server solution.
 But it's bidirectional, it's similar to traditional communication using sockets. 
