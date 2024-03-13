@@ -41,7 +41,7 @@ E.g.
 - Client: is there new data?
 - Server: No
 - Client: is there new data?
-- Server: yes
+- Server: yes, sending to client
 - Client: do something with new data
 
 The solution is on client side, it consists in create infinite a loop, requesting data to the server, wait an interval and do it again.
@@ -67,21 +67,21 @@ The client will be waiting for the data from server, once get it, will request a
 E.g.
 
 - Client: is there new data?
-- Server: waiting for new data came.
-- Server: waiting for new data came.
-- Server: waiting for new data came.
+- Server: waiting for new data...
+- Server: waiting for new data...
+- Server: waiting for new data...
 - Server: there is new data, sending to client.
 - Client: do something with new data
 
 ### Downsides
-- There is no timeouts, there will be more efforts to setup this kind of behavior in infrastructure, usually we want to avoid requests without timeouts.
-- Long-lived connections, Long polling can come with a latency overhead because it requires several hops between servers and devices. 
+- There is no timeouts, so there will be more efforts to setup this kind of behavior on infrastructure side, usually we want to avoid requests without timeouts.
+- Long-lived connections, long polling can come with a latency overhead because it requires several hops between servers and devices. 
 Gateways often have different ideas of how long a typical connection is allowed to stay open, so sometimes close while processing is still underway.
 - Depending on the server implementation, confirmation of message receipt by one client instance may also cause another client instance to never receive an expected message at all, as the server could mistakenly believe that the client has already received the data it is expecting.
 - Bad SOA design, this solution is not following SOA principles of communication between systems.
 
 ### Benefits 
-- Reduced number of requests can reduce the network workload.
+- Reducing number of requests can reduce the network and server overload.
 - Near real-time updates, once server has new data it will deliver right after to the client.
 
 ## Websockets
@@ -95,7 +95,7 @@ There is no time waiting for response, you just send a message.
 The connections are persistent, the server can handle thousands of connections.
 Either client or server can close the connection.
 
-In case you need to go deep, I write a POC to simulate distributed system and websockets. ([k8s-websockets])
+In case you need to go deep, I write a POC to simulate distributed system and websockets. (check it out [k8s-websockets])
 
 ### Downsides
 - Don't support audio and video data.
@@ -104,7 +104,7 @@ In case you need to go deep, I write a POC to simulate distributed system and we
 - Websockets are stateful, which makes them hard to use in large-scale systems that consist of multiple WebSocket servers. 
 
 ### Benefits
-- Lower latency compared to HTTP, protocol uses persistent connections rather than a continuous HTTP request/response cycle
+- Lower latency compared to HTTP, protocol uses persistent connections rather than a continuous HTTP request/response cycle.
 - Event-driven technology, it's similar to pub/sub solutions. The server can broadcast data as soon as it becomes available, without any need for polling.
 - Real time application, either client or server can send messages at same time with very low latency.
 
