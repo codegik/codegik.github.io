@@ -12,7 +12,7 @@ image:
 ---
 
 
-This project is using Scala + Springboot. It is a simple project to demonstrate the interoperability between Scala and Java.
+This is a POC using Scala + Springboot. It is a simple project to demonstrate the interoperability between Scala and Java.
 
 [Here is the full implementation.
 ](https://github.com/codegik/pocs/tree/master/scala3-springboot)
