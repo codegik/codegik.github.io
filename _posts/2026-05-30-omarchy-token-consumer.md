@@ -1,7 +1,7 @@
 ---
 title: A Tiny Waybar Module to Watch My Claude Code Limits
 author: Inácio Klassmann
-date: 2026-05-30 10:00:00
+date: 2026-05-30 00:30:00
 categories: [linux, omarchy, waybar]
 tags: [claude-code, waybar, omarchy, hyprland, python, rate-limit]
 pin: true
