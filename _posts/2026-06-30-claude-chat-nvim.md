@@ -1,5 +1,5 @@
 ---
-title: Bringing Claude Code Into Neovim Without Wrapping It
+title: Bringing Claude Code Into Neovim
 author: Inácio Klassmann
 date: 2026-06-30 00:30:00
 categories: [neovim, claude-code, plugin]
