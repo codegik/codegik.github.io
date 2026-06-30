@@ -4,6 +4,9 @@ author: Inácio Klassmann
 date: 2026-06-30 00:30:00
 categories: [neovim, claude-code, plugin]
 tags: [neovim, claude-code, lua, mcp, websocket, lsp, tui]
+pin: true
+image:
+  path: /assets/img/claude-chat-nvim-cover.png
 ---
 
 I live in two places: a terminal running [Claude Code](https://www.anthropic.com/claude-code)

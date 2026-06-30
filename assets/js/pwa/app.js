@@ -3,45 +3,33 @@ layout: compress
 permalink: '/app.js'
 ---
 
-const $notification = $('#notification');
-const $btnRefresh = $('#notification .toast-body>button');
-
 if ('serviceWorker' in navigator) {
     /* Registering Service Worker */
     navigator.serviceWorker.register('{{ "/sw.js" | relative_url }}')
         .then(registration => {
 
-            /* in case the user ignores the notification */
-            if (registration.waiting) {
-                $notification.toast('show');
+            /* A worker is already waiting from a previous visit — apply it silently */
+            if (registration.waiting && navigator.serviceWorker.controller) {
+                registration.waiting.postMessage('SKIP_WAITING');
             }
 
+            /* When a new version is found, activate it transparently once installed */
             registration.addEventListener('updatefound', () => {
                 registration.installing.addEventListener('statechange', () => {
-                    if (registration.waiting) {
-                        if (navigator.serviceWorker.controller) {
-                            $notification.toast('show');
-                        }
+                    if (registration.waiting && navigator.serviceWorker.controller) {
+                        registration.waiting.postMessage('SKIP_WAITING');
                     }
                 });
-            });
-
-            $btnRefresh.click(() => {
-                if (registration.waiting) {
-                    registration.waiting.postMessage('SKIP_WAITING');
-                }
-                $notification.toast('hide');
             });
         });
 
     let refreshing = false;
 
-    /* Detect controller change and refresh all the opened tabs */
+    /* The new worker has taken control — reload once to load the new version */
     navigator.serviceWorker.addEventListener('controllerchange', () => {
         if (!refreshing) {
-            window.location.reload();
             refreshing = true;
+            window.location.reload();
         }
     });
 }
-

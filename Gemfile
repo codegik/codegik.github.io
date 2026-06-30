@@ -4,6 +4,10 @@ source "https://rubygems.org"
 
 gemspec
 
+# Jekyll 4.3.2's Stevenson logger subclass doesn't call `super` in #initialize,
+# so logger >= 1.6 (which expects @level_override) crashes on `level`. Pin to 1.5.x.
+gem "logger", "~> 1.5.3"
+
 group :test do
   gem "html-proofer", "~> 3.18"
 end
