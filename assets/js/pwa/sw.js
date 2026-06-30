@@ -29,6 +29,8 @@ function isExcluded(url) {
 }
 
 self.addEventListener('install', event => {
+    /* Activate the new worker immediately instead of waiting for a prompt */
+    self.skipWaiting();
     event.waitUntil(
         caches.open(cacheName).then(cache => {
             return cache.addAll(resource);
@@ -46,7 +48,7 @@ self.addEventListener('activate', event => {
                     }
                 })
             );
-        })
+        }).then(() => self.clients.claim())
     );
 });
 
