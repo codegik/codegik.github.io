@@ -1,5 +1,6 @@
 ---
 title: The death of Linux Containers
+description: "What unikernels are, why they are smaller and safer than Linux containers, and the pros and cons of each for running applications."
 author: Inácio Klassmann
 date: 2021-04-30 20:00:00
 categories: [unikernel]

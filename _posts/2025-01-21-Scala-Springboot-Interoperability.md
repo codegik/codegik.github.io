@@ -1,5 +1,6 @@
 ---
 title: Scala + Springboot Interoperability
+description: "Using Scala 3 with Spring Boot: Scala collections in repositories, Spring JDBC with case classes, and ID generation. With a working POC."
 author: Inácio Klassmann
 date: 2025-01-21 10:55:00
 categories: [springboot, scala]

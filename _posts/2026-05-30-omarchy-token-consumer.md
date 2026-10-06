@@ -1,5 +1,6 @@
 ---
 title: A Tiny Waybar Module to Watch My Claude Code Limits
+description: "A single-file Python module for the Omarchy status bar that shows how much of my Claude Code rate limit I've used, before I hit it."
 author: Inácio Klassmann
 date: 2026-05-30 00:30:00
 categories: [linux, omarchy, waybar]

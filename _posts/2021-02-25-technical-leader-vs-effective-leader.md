@@ -1,5 +1,6 @@
 ---
 title: Technical leader vs Effective leader
+description: "Technical skill alone doesn't make a leader. Self-knowledge, character, listening, and servant leadership for tech leads who want real impact."
 author: Inácio Klassmann
 date: 2021-02-25 20:55:00
 categories: [leadership]

@@ -1,5 +1,6 @@
 ---
 title: Building Unikernel with Nanos + Spring-boot App and deploy on AWS Cloud
+description: "Step by step: build Nanos on macOS, package a Spring Boot app as a unikernel with OPS, and deploy the image to AWS."
 author: Inácio Klassmann
 date: 2021-04-30 20:55:00
 categories: [unikernel]

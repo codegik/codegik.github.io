@@ -1,5 +1,6 @@
 ---
 title: Software Sustainability
+description: "What makes software sustainable: customer value, built-in quality, empowered teams, simplicity, and optimizing the whole system."
 author: Inácio Klassmann
 date: 2020-07-28 20:55:00
 categories: [leadership, agile, software architecture]

@@ -1,5 +1,6 @@
 ---
 title: Effective Learning
+description: "Why reading and watching isn't enough: the four stages of competence, dealing with failure, and unlearning, from my own path learning agile."
 author: Inácio Klassmann
 date: 2020-07-28 20:55:00
 categories: [agile, culture]

@@ -1,5 +1,6 @@
 ---
 title: Avoiding Code Obscurity
+description: "What makes code obscure and how to avoid it, with bad and good examples on naming, variable scope, and short-lived variables."
 author: Inácio Klassmann
 date: 2023-09-20 20:55:00
 categories: [software design, code obscurity]

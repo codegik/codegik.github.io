@@ -1,5 +1,6 @@
 ---
 title: Bringing Claude Code Into Neovim
+description: "claude-chat.nvim puts the real Claude Code TUI in a Neovim sidebar, aware of your open file, cursor, selection, and diagnostics."
 author: Inácio Klassmann
 date: 2026-06-30 00:30:00
 categories: [neovim, claude-code, plugin]

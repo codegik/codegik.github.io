@@ -1,5 +1,6 @@
 ---
 title: Old fashion way of Microservices Architecture
+description: "Building microservices in a financial company with strict compliance and fixed infrastructure: service discovery, config repository, Zuul and Swagger UI."
 author: Inácio Klassmann
 date: 2020-08-11 20:55:00
 categories: [microservice, architecture, service discovery]

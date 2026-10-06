@@ -1,5 +1,6 @@
 ---
 title: Making people awesome
+description: "Training budgets don't make people grow on their own. How the company and the employee each own half of building a team that learns by itself."
 author: Inácio Klassmann
 date: 2020-06-02 20:55:00
 categories: [agile, culture]

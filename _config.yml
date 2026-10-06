@@ -25,10 +25,11 @@ tagline: Personal Blog # it will display as the sub-title
 sourcecode: https://github.com/codegik/codegik.github.io
 
 description: >- # used by seo meta and the atom feed
-  Inácio Klassmann, blog, articles, tutorials, it, technology, software architect, software engineering, best practices
+  Inácio Klassmann's blog on software architecture, engineering practices,
+  leadership, and the small tools I build for my own workflow.
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
-url: "https://codegik.github.io"
+url: "https://inacioklassmann.com"
 
 github:
   username: codegik # change to your github username
@@ -50,7 +51,7 @@ social:
     - https://github.com/codegik
     - https://inacioklassmann.medium.com
 
-google_site_verification: # fill in to your verification string
+google_site_verification: BNDph8NRPf_Dv_srM33n9fvJsJ8YmOh3mZPFvG5d3O4
 
 # ↑ --------------------------
 # The end of `jekyll-seo-tag` settings

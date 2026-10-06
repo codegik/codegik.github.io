@@ -1,5 +1,6 @@
 ---
 title: The Death of Springboot Webflux
+description: "WebFlux forces Flux and Mono through your whole codebase and breaks ThreadLocal, and with it correlation IDs and many libraries. Why I avoid it."
 author: Inácio Klassmann
 date: 2024-03-20 10:55:00
 categories: [springboot, webflux, netty]

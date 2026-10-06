@@ -1,5 +1,6 @@
 ---
 title: Innovation & Leadership
+description: "Innovation shouldn't live in one department. How to keep a product evolving, choose the right solution, and what leaders do in an innovation culture."
 author: Inácio Klassmann
 date: 2020-09-28 20:55:00
 categories: [leadership, innovation]

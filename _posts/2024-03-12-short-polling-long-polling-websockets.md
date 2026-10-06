@@ -1,9 +1,10 @@
 ---
 title: Short polling, Long polling and Websockets
+description: "How short polling, long polling, and WebSockets deliver async notifications, with the upsides and downsides of each."
 author: Inácio Klassmann
 date: 2024-03-12 10:55:00
 categories: [event-driven, notification, software design]
-tags: [software design, good practice, shor polling, long polling, websockets]
+tags: [software design, good practice, short polling, long polling, websockets]
 pin: true
 math: true
 mermaid: true
